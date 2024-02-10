@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaderboard</title>
+<style>
+  *{
+    background-color: #6298ef;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    background-color: #6298ef;
+  }
+  .leaderboard {
+    width: 300px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .team {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  .team:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  .team span {
+    flex: 1;
+  }
+  .team .points {
+    font-weight: bold;
+  }
+  #my-box {
+  background-color: transparent;
+  }
+  #js{
+    background-color: transparent;
+  }
+
+</style>
+</head>
+<body>
+    <h1 style="text-align: center; color:white;">Leaderboard</h1>
+<div class="leaderboard" id="leaderboard">
+  <!-- Teams will be dynamically added here -->
+  
+</div>
+
+<script id="js">
+  // Sample data for demonstration
+  const teams = [
+  { name: "DashCoders", points: 350 },
+  { name: "BravoZeus", points: 320 },
+  { name: "SwiftSelect", points: 310 },
+  { name: "Ctrl+Alt+Defeat", points: 300 },
+  { name: "BugBashers", points: 290 },
+  { name: "Nexus", points: 280 },
+  { name: "DeathNote", points: 270 },
+  { name: "Ice$pic3", points: 260 },
+  { name: "CodingChamps", points: 250 },
+  { name: "CodeLead", points: 240 },
+  { name: "PythonCoders", points: 230 },
+  { name: "Insert", points: 220 },
+  { name: "AcceptDefeat", points: 210 },
+  { name: "November", points: 200 },
+  { name: "Oscar", points: 190 },
+  { name: "Ctrl+Shift+S", points: 180 },
+  { name: "Quebec", points: 170 },
+  { name: "Romeo", points: 160 },
+  { name: "JavaNinja", points: 150 },
+  { name: "SpringBoot", points: 140 }
+];
+
+
+  function renderLeaderboard() {
+    const leaderboard = document.getElementById('leaderboard');
+    leaderboard.innerHTML = '';
+
+    // Sort teams based on points
+    teams.sort((a, b) => b.points - a.points);
+
+    teams.forEach((team, index) => {
+      const teamDiv = document.createElement('div');
+      teamDiv.classList.add('team');
+      teamDiv.innerHTML = `
+        <span>${index + 1}. ${team.name}</span>
+        <span class="points">${team.points} points</span>
+      `;
+      leaderboard.appendChild(teamDiv);
+    });
+  }
+
+  // Render leaderboard on page load
+  renderLeaderboard();
+</script>
+</body>
+</html>

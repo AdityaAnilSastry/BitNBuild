@@ -1,0 +1,38 @@
+/* Styles for event list */
+/* .event-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .event-card {
+    width: 300px;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .event-img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .event-title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .event-description {
+    margin-top: 5px;
+  } */
+
+.event{
+    display: grid;
+    height: 200px;
+    /* border: 2px solid black; */
+}
+.event:hover{
+    border: 2px solid black;
+}
+  
